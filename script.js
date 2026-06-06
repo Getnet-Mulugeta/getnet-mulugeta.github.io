@@ -74,13 +74,14 @@ function drawNeural() {
     if (n.firing && now - n.fireTime > 600) n.firing = false;
   });
 
+  const connDist = Math.min(W, H) * 0.45;
   for (let i = 0; i < neurons.length; i++) {
     for (let j = i + 1; j < neurons.length; j++) {
       const a = neurons[i], b = neurons[j];
       const dx = (a.x - b.x) * W, dy = (a.y - b.y) * H;
       const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 380) {
-        const alpha = 0.3 * (1 - dist / 380);
+      if (dist < connDist) {
+        const alpha = 0.35 * (1 - dist / connDist);
         ctx.beginPath();
         ctx.strokeStyle = `rgba(0,194,255,${alpha})`;
         ctx.lineWidth = 1.2;
