@@ -958,40 +958,6 @@ footer {
   border-radius: 3px;
   cursor: pointer;
 }
-
-@media (max-width: 900px) {
-  .hamburger { display: block; }
-
-  .nav-links {
-    display: none;
-    position: fixed;
-    inset: 0;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: rgba(8, 11, 18, 0.97);
-    backdrop-filter: blur(20px);
-    gap: 2rem;
-    z-index: 99;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .nav-links.open {
-    display: flex;
-    opacity: 1;
-    animation: fadeIn 0.3s ease forwards;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  .nav-links li a {
-    font-size: 1.4rem;
-    letter-spacing: 3px;
-    padding: 0.5rem 1rem;
     border: 1px solid transparent;
     border-radius: 3px;
   }
