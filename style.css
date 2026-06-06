@@ -964,7 +964,6 @@ footer {
   border-radius: 3px;
   cursor: pointer;
 }
-}
 
 @media (max-width: 900px) {
   nav {
@@ -992,7 +991,7 @@ footer {
   .hamburger { display: block; }
 
   .nav-links {
-    display: none !important;
+    display: none;
     position: fixed;
     top: 53px;
     left: 0;
@@ -1007,7 +1006,7 @@ footer {
     z-index: 98;
   }
 
-  .nav-links.open { display: flex; }
+  .nav-links.open { display: flex !important; }
 
   .nav-links li { width: 100%; }
 
