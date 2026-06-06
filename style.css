@@ -76,6 +76,12 @@ nav {
   list-style: none;
 }
 
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+}
+
 .nav-links a {
   font-family: var(--font-mono);
   font-size: 0.68rem;
