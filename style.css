@@ -1087,14 +1087,7 @@ footer {
    FLOATING NAV DOTS
    ============================================ */
 .nav-dots {
-  position: fixed;
-  right: 1.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 50;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+  display: none;
 }
 
 .nav-dot {
