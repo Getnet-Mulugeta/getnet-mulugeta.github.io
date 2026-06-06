@@ -35,8 +35,8 @@ for (let i = 0; i < NEURON_COUNT; i++) {
   neurons.push({
     x: Math.random(),
     y: Math.random(),
-    vx: (Math.random() - 0.5) * 0.00025,
-    vy: (Math.random() - 0.5) * 0.00025,
+    vx: (Math.random() - 0.5) * 0.00015,
+    vy: (Math.random() - 0.5) * 0.00015,
     radius: 2.5 + Math.random() * 2.5,
     pulse: Math.random() * Math.PI * 2,
     pulseSpeed: 0.02 + Math.random() * 0.03,
@@ -79,8 +79,8 @@ function drawNeural() {
       const a = neurons[i], b = neurons[j];
       const dx = (a.x - b.x) * W, dy = (a.y - b.y) * H;
       const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 280) {
-        const alpha = 0.25 * (1 - dist / 280);
+      if (dist < 380) {
+        const alpha = 0.3 * (1 - dist / 380);
         ctx.beginPath();
         ctx.strokeStyle = `rgba(0,194,255,${alpha})`;
         ctx.lineWidth = 1.2;
