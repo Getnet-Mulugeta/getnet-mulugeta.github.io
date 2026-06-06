@@ -1,0 +1,39 @@
+<svg width="100%" viewBox="0 0 680 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="680" height="320" fill="#0a0f1e"/>
+  <text x="340" y="30" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#c9a84c" letter-spacing="2" font-weight="600">DC METRO PIPELINE — ARCHITECTURE</text>
+  <rect x="30" y="55" width="130" height="56" rx="6" fill="#162040" stroke="#c9a84c" stroke-width="1.5" stroke-opacity="0.8"/>
+  <text x="95" y="78" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#e8c97a" font-weight="600">WMATA API</text>
+  <text x="95" y="95" text-anchor="middle" font-family="monospace" font-size="10" fill="#c9a84c">every 60s</text>
+  <line x1="160" y1="83" x2="198" y2="83" stroke="#c9a84c" stroke-width="1" stroke-opacity="0.6" marker-end="url(#arrow)"/>
+  <rect x="200" y="55" width="140" height="56" rx="6" fill="#0e1628" stroke="#c9a84c" stroke-width="1" stroke-opacity="0.6"/>
+  <text x="270" y="78" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#e8c97a" font-weight="600">Poller</text>
+  <text x="270" y="95" text-anchor="middle" font-family="monospace" font-size="10" fill="#8892a4">Node.js · node-cron</text>
+  <line x1="340" y1="83" x2="378" y2="83" stroke="#c9a84c" stroke-width="1" stroke-opacity="0.6" marker-end="url(#arrow)"/>
+  <rect x="380" y="55" width="140" height="56" rx="6" fill="#162040" stroke="#c9a84c" stroke-width="1.5" stroke-opacity="0.8"/>
+  <text x="450" y="78" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#e8c97a" font-weight="600">PostgreSQL</text>
+  <text x="450" y="95" text-anchor="middle" font-family="monospace" font-size="10" fill="#8892a4">580K rows/day</text>
+  <line x1="520" y1="83" x2="558" y2="83" stroke="#c9a84c" stroke-width="1" stroke-opacity="0.6" marker-end="url(#arrow)"/>
+  <rect x="560" y="55" width="110" height="56" rx="6" fill="#0e1628" stroke="#c9a84c" stroke-width="1" stroke-opacity="0.6"/>
+  <text x="615" y="78" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#e8c97a" font-weight="600">Express API</text>
+  <text x="615" y="95" text-anchor="middle" font-family="monospace" font-size="10" fill="#8892a4">REST · CORS</text>
+  <line x1="615" y1="111" x2="615" y2="148" stroke="#c9a84c" stroke-width="1" stroke-opacity="0.6" marker-end="url(#arrow)"/>
+  <rect x="520" y="150" width="190" height="56" rx="6" fill="#162040" stroke="#c9a84c" stroke-width="1.5" stroke-opacity="0.8"/>
+  <text x="615" y="173" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#e8c97a" font-weight="600">Live Dashboard</text>
+  <text x="615" y="190" text-anchor="middle" font-family="monospace" font-size="10" fill="#8892a4">HTML · JS · Auto-refresh</text>
+  <line x1="450" y1="111" x2="450" y2="148" stroke="#c9a84c" stroke-width="1" stroke-opacity="0.4" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+  <rect x="340" y="150" width="200" height="56" rx="6" fill="#0e1628" stroke="#c9a84c" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="440" y="173" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#c9a84c" font-weight="600">Airflow</text>
+  <text x="440" y="190" text-anchor="middle" font-family="monospace" font-size="10" fill="#8892a4">24hr rolling purge</text>
+  <rect x="190" y="150" width="130" height="56" rx="6" fill="#0e1628" stroke="#c9a84c" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="255" y="173" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#c9a84c" font-weight="600">Docker</text>
+  <text x="255" y="190" text-anchor="middle" font-family="monospace" font-size="10" fill="#8892a4">Containerized</text>
+  <rect x="30" y="150" width="140" height="56" rx="6" fill="#0e1628" stroke="#c9a84c" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="100" y="173" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#c9a84c" font-weight="600">Railway</text>
+  <text x="100" y="190" text-anchor="middle" font-family="monospace" font-size="10" fill="#8892a4">Production deploy</text>
+  <text x="340" y="270" text-anchor="middle" font-family="monospace" font-size="10" fill="#8892a4">All DC Metro stations · Real-time · Production on Railway</text>
+</svg>
