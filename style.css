@@ -655,14 +655,11 @@ footer {
    RESPONSIVE
    ============================================ */
 @media (max-width: 900px) {
-  nav { padding: 1rem 1.5rem; }
-  .nav-links { display: none; }
   .hero { padding: 7rem 1.5rem 3rem; }
   .section { padding: 5rem 1.5rem; }
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
   .skills-grid { grid-template-columns: 1fr 1fr; }
-  .project-body {
-  min-height: 400px; grid-template-columns: 1fr; }
+  .project-body { min-height: auto; grid-template-columns: 1fr; }
   .project-visual { display: none; }
 }
 
@@ -1099,18 +1096,20 @@ footer {
   }
 
   .hero-cta {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 0.8rem;
     width: 100%;
-    padding: 0 2rem;
+    padding: 0;
   }
 
   .hero-cta .btn-primary,
   .hero-cta .btn-ghost {
-    width: 100%;
+    width: auto;
     text-align: center;
-    padding: 0.85rem 1rem;
+    padding: 0.75rem 1.2rem;
+    font-size: 0.7rem;
   }
 
   .pipe-canvas {
