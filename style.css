@@ -728,7 +728,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.8rem 1.2rem;
+  padding: 0.8rem 1rem 0.8rem 1.2rem;
   border-bottom: 1px solid rgba(201,168,76,0.15);
   background: rgba(201,168,76,0.03);
 }
@@ -975,7 +975,7 @@ footer {
     border-radius: 0;
     min-width: unset;
     width: 100%;
-    padding: 0.8rem 1.2rem;
+    padding: 0.8rem 1rem 0.8rem 1.2rem;
     border-left: none;
     border-right: none;
     border-top: none;
