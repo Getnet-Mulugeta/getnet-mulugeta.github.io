@@ -116,13 +116,13 @@ drawPipeline();
 // Typewriter
 // ============================================
 const twLines = [
-  '> designing end-to-end data pipelines...',
-  '> building and deploying ML models to production...',
-  '> architecting cloud-native data infrastructure...',
-  '> transforming raw data into business intelligence...',
-  '> engineering real-time and batch data systems...',
-  '> building APIs that serve data at scale...',
-  '> automating workflows with Airflow and Docker...',
+  '> training and fine-tuning large language models...',
+  '> building production RAG pipelines with LangChain...',
+  '> deploying ML models with FastAPI and Docker...',
+  '> engineering end-to-end LLM-powered applications...',
+  '> optimizing transformer architectures for inference...',
+  '> building intelligent systems that learn and adapt...',
+  '> turning research papers into production AI products...',
 ];
 let twIdx = 0;
 const twEl = document.getElementById('twText');
