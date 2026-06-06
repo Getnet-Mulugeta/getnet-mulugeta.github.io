@@ -226,11 +226,15 @@ zoomOverlay.addEventListener('click', () => {
 // Hamburger Menu
 // ============================================
 function toggleMenu() {
-  document.getElementById('navLinks').classList.toggle('open');
+  const navLinks = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  navLinks.classList.toggle('open');
+  hamburger.innerHTML = navLinks.classList.contains('open') ? '✕' : '&#9776;';
 }
 
 function closeMenu() {
   document.getElementById('navLinks').classList.remove('open');
+  document.getElementById('hamburger').innerHTML = '&#9776;';
 }
 
 // ============================================
