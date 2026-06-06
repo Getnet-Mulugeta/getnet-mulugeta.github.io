@@ -79,11 +79,11 @@ function drawNeural() {
       const a = neurons[i], b = neurons[j];
       const dx = (a.x - b.x) * W, dy = (a.y - b.y) * H;
       const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 220) {
-        const alpha = 0.06 * (1 - dist / 220);
+      if (dist < 280) {
+        const alpha = 0.25 * (1 - dist / 280);
         ctx.beginPath();
         ctx.strokeStyle = `rgba(0,194,255,${alpha})`;
-        ctx.lineWidth = 0.6;
+        ctx.lineWidth = 1.2;
         ctx.moveTo(a.x * W, a.y * H);
         ctx.lineTo(b.x * W, b.y * H);
         ctx.stroke();
