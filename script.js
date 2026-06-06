@@ -1,9 +1,8 @@
 // ============================================
-// Pipeline Hero Animation
+// Neural Network Hero Animation
 // ============================================
 const canvas = document.getElementById('pipeCanvas');
 const ctx = canvas.getContext('2d');
-
 function resize() {
   canvas.width = canvas.offsetWidth;
   canvas.height = canvas.offsetHeight;
@@ -11,106 +10,132 @@ function resize() {
 resize();
 window.addEventListener('resize', resize);
 
-const allTools = [
-  'Python','Apache Airflow','Apache Spark','Kafka','PostgreSQL',
-  'AWS S3','Docker','dbt','MLflow','FastAPI','Snowflake','Redis',
-  'Terraform','PyTorch','TensorFlow','GPT-4','BERT','Kubernetes',
-  'BigQuery','Redshift','scikit-learn','Pandas','Node.js','Grafana',
-  'Prometheus','Databricks','Delta Lake','Flink','Elasticsearch',
-  'OpenAI API','LangChain','Pinecone','Spark Streaming','Hive',
-  'Presto','Trino','Great Expectations','Prefect','dbt Cloud',
-  'AWS Glue','AWS Lambda','GCP','Azure','Looker','Tableau'
+const mlTools = [
+  'PyTorch','TensorFlow','HuggingFace','LangChain','OpenAI',
+  'scikit-learn','BERT','GPT-4','Embeddings','pgvector',
+  'MLflow','FastAPI','Docker','Groq','RAG',
+  'Transformers','LoRA','RLHF','Diffusion','CUDA'
 ];
 
-const MAX_NODES = 16;
-const nodes = [];
-
-function spawnNode(label) {
-  return {
-    label,
-    x: Math.random(),
-    y: Math.random(),
-    vx: (Math.random() - 0.5) * 0.0004,
-    vy: (Math.random() - 0.5) * 0.0004,
-    opacity: 0,
-    fadeIn: true,
-    fadeOut: false,
-    life: 8000 + Math.random() * 8000,
-    born: Date.now(),
-  };
-}
-
+const NEURON_COUNT = 28;
+const neurons = [];
+const signals = [];
 const usedLabels = new Set();
-function getUnusedLabel() {
-  const available = allTools.filter(t => !usedLabels.has(t));
-  if (available.length === 0) { usedLabels.clear(); return allTools[Math.floor(Math.random()*allTools.length)]; }
-  const label = available[Math.floor(Math.random() * available.length)];
+
+function getLabel() {
+  const available = mlTools.filter(t => !usedLabels.has(t));
+  if (!available.length) { usedLabels.clear(); }
+  const pool = mlTools.filter(t => !usedLabels.has(t));
+  const label = pool[Math.floor(Math.random() * pool.length)];
   usedLabels.add(label);
   return label;
 }
 
-for (let i = 0; i < MAX_NODES; i++) {
-  const n = spawnNode(getUnusedLabel());
-  n.opacity = Math.random();
-  n.born = Date.now() - Math.random() * n.life;
-  nodes.push(n);
+for (let i = 0; i < NEURON_COUNT; i++) {
+  neurons.push({
+    x: Math.random(),
+    y: Math.random(),
+    vx: (Math.random() - 0.5) * 0.00025,
+    vy: (Math.random() - 0.5) * 0.00025,
+    radius: 2.5 + Math.random() * 2.5,
+    pulse: Math.random() * Math.PI * 2,
+    pulseSpeed: 0.02 + Math.random() * 0.03,
+    opacity: 0.3 + Math.random() * 0.7,
+    label: Math.random() > 0.5 ? getLabel() : null,
+    firing: false,
+    fireTime: 0,
+  });
 }
 
-function drawPipeline() {
+function spawnSignal(from, to) {
+  signals.push({ from, to, progress: 0, speed: 0.012 + Math.random() * 0.01 });
+}
+
+setInterval(() => {
+  const i = Math.floor(Math.random() * neurons.length);
+  const j = Math.floor(Math.random() * neurons.length);
+  if (i !== j) {
+    neurons[i].firing = true;
+    neurons[i].fireTime = Date.now();
+    spawnSignal(i, j);
+  }
+}, 400);
+
+function drawNeural() {
   const W = canvas.width, H = canvas.height;
   ctx.clearRect(0, 0, W, H);
   const now = Date.now();
 
-  nodes.forEach((n, i) => {
-    const age = now - n.born;
-    if (age > n.life - 1500) {
-      n.opacity = Math.max(0, n.opacity - 0.008);
-      if (n.opacity <= 0) {
-        usedLabels.delete(n.label);
-        const fresh = spawnNode(getUnusedLabel());
-        nodes[i] = fresh;
-        return;
-      }
-    } else if (n.opacity < 1) {
-      n.opacity = Math.min(1, n.opacity + 0.008);
-    }
+  neurons.forEach(n => {
     n.x += n.vx; n.y += n.vy;
     if (n.x < 0.02 || n.x > 0.98) n.vx *= -1;
     if (n.y < 0.02 || n.y > 0.98) n.vy *= -1;
+    n.pulse += n.pulseSpeed;
+    if (n.firing && now - n.fireTime > 600) n.firing = false;
   });
 
-  for (let i = 0; i < nodes.length; i++) {
-    for (let j = i + 1; j < nodes.length; j++) {
-      const na = nodes[i], nb = nodes[j];
-      const dx = (na.x - nb.x) * W, dy = (na.y - nb.y) * H;
-      const dist = Math.sqrt(dx*dx + dy*dy);
-      const alpha = Math.min(na.opacity, nb.opacity);
-      if (dist < 300) {
+  for (let i = 0; i < neurons.length; i++) {
+    for (let j = i + 1; j < neurons.length; j++) {
+      const a = neurons[i], b = neurons[j];
+      const dx = (a.x - b.x) * W, dy = (a.y - b.y) * H;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 220) {
+        const alpha = 0.06 * (1 - dist / 220);
         ctx.beginPath();
-        ctx.strokeStyle = `rgba(201,168,76,${0.12 * alpha * (1 - dist/300)})`;
-        ctx.lineWidth = 0.8;
-        ctx.moveTo(na.x * W, na.y * H);
-        ctx.lineTo(nb.x * W, nb.y * H);
+        ctx.strokeStyle = `rgba(0,194,255,${alpha})`;
+        ctx.lineWidth = 0.6;
+        ctx.moveTo(a.x * W, a.y * H);
+        ctx.lineTo(b.x * W, b.y * H);
         ctx.stroke();
       }
     }
   }
 
-  nodes.forEach(n => {
-    const x = n.x * W, y = n.y * H;
+  for (let s = signals.length - 1; s >= 0; s--) {
+    const sig = signals[s];
+    sig.progress += sig.speed;
+    if (sig.progress >= 1) { signals.splice(s, 1); continue; }
+    const a = neurons[sig.from], b = neurons[sig.to];
+    const sx = (a.x + (b.x - a.x) * sig.progress) * W;
+    const sy = (a.y + (b.y - a.y) * sig.progress) * H;
+    const grd = ctx.createRadialGradient(sx, sy, 0, sx, sy, 8);
+    grd.addColorStop(0, 'rgba(0,194,255,0.9)');
+    grd.addColorStop(1, 'rgba(0,194,255,0)');
     ctx.beginPath();
-    ctx.arc(x, y, 3, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(201,168,76,${0.6 * n.opacity})`;
+    ctx.arc(sx, sy, 8, 0, Math.PI * 2);
+    ctx.fillStyle = grd;
     ctx.fill();
-    ctx.font = '10px monospace';
-    ctx.fillStyle = `rgba(136,146,164,${n.opacity * 0.8})`;
-    ctx.textAlign = 'center';
-    ctx.fillText(n.label, x, y - 8);
+  }
+
+  neurons.forEach(n => {
+    const x = n.x * W, y = n.y * H;
+    const pulseFactor = 1 + Math.sin(n.pulse) * 0.3;
+    const r = n.radius * pulseFactor;
+    const isFiring = n.firing;
+    const glowR = isFiring ? r * 6 : r * 3;
+    const glowAlpha = isFiring ? 0.4 : 0.12;
+    const glow = ctx.createRadialGradient(x, y, 0, x, y, glowR);
+    glow.addColorStop(0, `rgba(0,194,255,${glowAlpha})`);
+    glow.addColorStop(1, 'rgba(0,194,255,0)');
+    ctx.beginPath();
+    ctx.arc(x, y, glowR, 0, Math.PI * 2);
+    ctx.fillStyle = glow;
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fillStyle = isFiring ? 'rgba(0,194,255,1)' : `rgba(0,194,255,${n.opacity * 0.7})`;
+    ctx.fill();
+    if (n.label) {
+      ctx.font = '9px monospace';
+      ctx.fillStyle = `rgba(93,223,255,${n.opacity * 0.6})`;
+      ctx.textAlign = 'center';
+      ctx.fillText(n.label, x, y - r - 5);
+    }
   });
 
-  requestAnimationFrame(drawPipeline);
+  requestAnimationFrame(drawNeural);
 }
-drawPipeline();
+drawNeural();
 
 // ============================================
 // Typewriter
