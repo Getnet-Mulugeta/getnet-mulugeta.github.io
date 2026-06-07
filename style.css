@@ -1428,15 +1428,7 @@ footer {
 }
 
 .edu-timeline-item {
-  padding: 2rem;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  background: var(--navy-card);
-  transition: border-color 0.3s;
-}
-
-.edu-timeline-item:hover {
-  border-color: var(--gold-dim);
+  padding: 1.5rem 0;
 }
 
 .edu-year-badge {
