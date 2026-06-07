@@ -353,7 +353,33 @@ window.addEventListener('scroll', () => {
 // ============================================
 window.addEventListener('load', () => {
   setTimeout(() => {
-    document.getElementById('loader').classList.add('hidden');
+    // Glitch loader
+const loaderText = document.getElementById('loaderText');
+const loaderLine = document.querySelector('.loader-line');
+const name = 'GETNET MULUGETA';
+const glitchCharsLoader = '01ABCDEFabcdef#$%&@!?';
+let loaderDone = false;
+
+async function loaderGlitch() {
+  // Expand line first
+  setTimeout(() => loaderLine.classList.add('expand'), 100);
+  await new Promise(r => setTimeout(r, 400));
+  
+  // Glitch reveal name
+  for (let i = 0; i <= name.length; i++) {
+    let result = name.slice(0, i);
+    for (let j = i; j < name.length; j++) {
+      result += name[j] === ' ' ? ' ' : glitchCharsLoader[Math.floor(Math.random() * glitchCharsLoader.length)];
+    }
+    loaderText.textContent = result;
+    await new Promise(r => setTimeout(r, 35));
+  }
+  
+  await new Promise(r => setTimeout(r, 500));
+  document.getElementById('loader').classList.add('hidden');
+}
+
+loaderGlitch();
   }, 1900);
 });
 // ============================================
