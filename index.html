@@ -234,110 +234,96 @@
   <section id="projects" class="section projects">
     <div class="section-label">06 / Projects</div>
     <h2>Personal <span class="gold">Projects</span></h2>
-    <div class="projects-list">
+    <div class="projects-showcase">
 
-      <!-- =====================================================
-           PROJECT CARD — COPY THIS BLOCK TO ADD A NEW PROJECT
-           ===================================================== -->
-      <div class="project-card">
-        <div class="project-meta">
-          <span class="project-date">Jan 2026 – May 2026</span>
-          <span class="project-status live">Live</span>
-        </div>
-        <div class="project-body">
-          <div class="project-info">
-            <h3 class="project-title">FinResolve</h3>
-            <p class="project-subtitle">Financial Complaints Data Pipeline & Routing System</p>
-            <p class="project-desc">Architected an end-to-end ETL pipeline processing 1M+ CFPB complaint records with modular stages for extraction, schema validation, transformation, and structured loading into PostgreSQL. Built a label engineering system generating 812K training samples across 9 departments. Deployed full stack via Docker with automated model artifact versioning on AWS S3, a FastAPI data serving layer with JWT auth and role-based dashboards.</p>
-            <div class="project-tags">
-              <span>Python</span><span>Apache Airflow</span><span>PostgreSQL</span>
-              <span>AWS S3</span><span>Docker</span><span>FastAPI</span><span>LightGBM</span><span>Render</span>
+      <div class="showcase-item">
+        <div class="showcase-number">01</div>
+        <div class="showcase-content">
+          <div class="showcase-header">
+            <div>
+              <h3 class="showcase-title">FinResolve</h3>
+              <p class="showcase-subtitle">Financial Complaints Data Pipeline & Routing System</p>
             </div>
-            <div class="project-links">
-              <a href="https://github.com/Getnet-Mulugeta/complaint-routing-ml" target="_blank" class="link-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                GitHub
-              </a>
-              <a href="#" onclick="openModal('videos/Finresolve routing system.mp4', 'FinResolve — Demo'); return false;" class="link-btn video">▶ Demo Video</a>
-              <a href="https://finresolve-app.onrender.com" target="_blank" class="link-btn">🌐 Live Demo</a>
+            <div class="showcase-meta">
+              <span class="showcase-date">Jan 2026 – May 2026</span>
+              <span class="project-status live">Live</span>
             </div>
           </div>
-          <div class="project-visual">
-            <img src="images/finresolve-diagram.svg" alt="FinResolve Architecture" style="width:100%;border-radius:4px;">
+          <p class="showcase-desc">Architected an end-to-end ETL pipeline processing 1M+ CFPB complaint records with modular stages for extraction, schema validation, transformation, and structured loading into PostgreSQL. Built a label engineering system generating 812K training samples across 9 departments. Deployed full stack via Docker with automated model artifact versioning on AWS S3, a FastAPI data serving layer with JWT auth and role-based dashboards.</p>
+          <div class="showcase-tags">
+            <span>Python</span><span>Apache Airflow</span><span>PostgreSQL</span>
+            <span>AWS S3</span><span>Docker</span><span>FastAPI</span><span>LightGBM</span><span>Render</span>
           </div>
-        </div>
-      </div>
-      <!-- END PROJECT CARD -->
-
-      <!-- =====================================================
-           PROJECT CARD — COPY THIS BLOCK TO ADD A NEW PROJECT
-           ===================================================== -->
-      <div class="project-card">
-        <div class="project-meta">
-          <span class="project-date">May 2026</span>
-          <span class="project-status live">Live</span>
-        </div>
-        <div class="project-body">
-          <div class="project-info">
-            <h3 class="project-title">DC Metro Pipeline</h3>
-            <p class="project-subtitle">Real-Time Arrivals Data Pipeline</p>
-            <p class="project-desc">Built a real-time ingestion pipeline polling the WMATA API every 60 seconds across all DC Metro stations, sustaining 580,000+ rows/day into PostgreSQL. Implemented Airflow-scheduled data retention with rolling 24-hour window purging. Designed the full architecture end-to-end — containerized with Docker and deployed to production on Railway.</p>
-            <div class="project-tags">
-              <span>Node.js</span><span>PostgreSQL</span><span>Apache Airflow</span>
-              <span>Docker</span><span>Express</span><span>Railway</span><span>WMATA API</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Getnet-Mulugeta/dc-metro-pipeline" target="_blank" class="link-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                GitHub
-              </a>
-              <a href="#" onclick="openModal('videos/dc-metro-pipeline-demo.mp4', 'DC Metro Pipeline — Demo'); return false;" class="link-btn video">▶ Demo Video</a>
-            </div>
-          </div>
-          <div class="project-visual">
-            <img src="images/dcmetro-diagram.svg" alt="DC Metro Architecture" style="width:100%;border-radius:4px;">
+          <div class="showcase-links">
+            <a href="https://github.com/Getnet-Mulugeta/complaint-routing-ml" target="_blank" class="showcase-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="#" onclick="openModal('videos/Finresolve routing system.mp4', 'FinResolve — Demo'); return false;" class="showcase-btn highlight">▶ Demo</a>
+            <a href="https://finresolve-app.onrender.com" target="_blank" class="showcase-btn">🌐 Live</a>
           </div>
         </div>
       </div>
 
-      <!-- =====================================================
-           PROJECT CARD — COPY THIS BLOCK TO ADD A NEW PROJECT
-           ===================================================== -->
-      <div class="project-card">
-        <div class="project-meta">
-          <span class="project-date">May 2026 – Jun 2026</span>
-          <span class="project-status live">Live</span>
-        </div>
-        <div class="project-body">
-          <div class="project-info">
-            <h3 class="project-title">DocuQuery</h3>
-            <p class="project-subtitle">Production RAG Pipeline & AI Document Assistant</p>
-            <p class="project-desc">A production-grade full-stack RAG application where users ask natural language questions and get streaming answers grounded in real documents. Features two modes: a Personal Assistant for private PDF/TXT uploads with session isolation and 24hr auto-deletion, and a DC Tech Jobs mode pre-loaded with 85+ real federal job postings updated daily via Apache Airflow. End-to-end pipeline: document ingestion, chunking, HuggingFace embeddings, pgvector storage with HNSW index, Groq LLM streaming, FastAPI backend, and nginx frontend.</p>
-            <div class="project-tags">
-              <span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>pgvector</span>
-              <span>HuggingFace</span><span>Groq</span><span>Apache Airflow</span><span>Docker</span><span>Railway</span>
+      <div class="showcase-item">
+        <div class="showcase-number">02</div>
+        <div class="showcase-content">
+          <div class="showcase-header">
+            <div>
+              <h3 class="showcase-title">DC Metro Pipeline</h3>
+              <p class="showcase-subtitle">Real-Time Arrivals Data Pipeline</p>
             </div>
-            <div class="project-links">
-              <a href="https://github.com/Getnet-Mulugeta/docuquery" target="_blank" class="link-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                GitHub
-              </a>
-              <a href="https://balanced-manifestation-production-50d4.up.railway.app" target="_blank" class="link-btn">🌐 Live Demo</a>
-              <a href="https://docuquery-production-872a.up.railway.app/docs" target="_blank" class="link-btn">📄 API Docs</a>
-              <a href="#" onclick="openModal('videos/docu_compressed.mp4', 'DocuQuery — Demo'); return false;" class="link-btn video">▶ Demo Video</a>
+            <div class="showcase-meta">
+              <span class="showcase-date">May 2026</span>
+              <span class="project-status live">Live</span>
             </div>
           </div>
-          <div class="project-visual">
-            <img src="images/docuquery-diagram.svg" alt="DocuQuery Architecture" style="width:100%;border-radius:4px;">
+          <p class="showcase-desc">Built a real-time ingestion pipeline polling the WMATA API every 60 seconds across all DC Metro stations, sustaining 580,000+ rows/day into PostgreSQL. Implemented Airflow-scheduled data retention with rolling 24-hour window purging. Designed the full architecture end-to-end, containerized with Docker and deployed to production on Railway.</p>
+          <div class="showcase-tags">
+            <span>Node.js</span><span>PostgreSQL</span><span>Apache Airflow</span>
+            <span>Docker</span><span>Express</span><span>Railway</span><span>WMATA API</span>
+          </div>
+          <div class="showcase-links">
+            <a href="https://github.com/Getnet-Mulugeta/dc-metro-pipeline" target="_blank" class="showcase-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="#" onclick="openModal('videos/dc-metro-pipeline-demo.mp4', 'DC Metro Pipeline — Demo'); return false;" class="showcase-btn highlight">▶ Demo</a>
           </div>
         </div>
       </div>
-      <!-- END PROJECT CARD -->
+
+      <div class="showcase-item">
+        <div class="showcase-number">03</div>
+        <div class="showcase-content">
+          <div class="showcase-header">
+            <div>
+              <h3 class="showcase-title">DocuQuery</h3>
+              <p class="showcase-subtitle">Production RAG Pipeline & AI Document Assistant</p>
+            </div>
+            <div class="showcase-meta">
+              <span class="showcase-date">May 2026 – Jun 2026</span>
+              <span class="project-status live">Live</span>
+            </div>
+          </div>
+          <p class="showcase-desc">A production-grade full-stack RAG application where users ask natural language questions and get streaming answers grounded in real documents. Features two modes: a Personal Assistant for private PDF/TXT uploads with session isolation and 24hr auto-deletion, and a DC Tech Jobs mode pre-loaded with 85+ real federal job postings updated daily via Apache Airflow. End-to-end pipeline: document ingestion, chunking, HuggingFace embeddings, pgvector storage with HNSW index, Groq LLM streaming, FastAPI backend, and nginx frontend.</p>
+          <div class="showcase-tags">
+            <span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>pgvector</span>
+            <span>HuggingFace</span><span>Groq</span><span>Apache Airflow</span><span>Docker</span><span>Railway</span>
+          </div>
+          <div class="showcase-links">
+            <a href="https://github.com/Getnet-Mulugeta/docuquery" target="_blank" class="showcase-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="https://balanced-manifestation-production-50d4.up.railway.app" target="_blank" class="showcase-btn">🌐 Live</a>
+            <a href="https://docuquery-production-872a.up.railway.app/docs" target="_blank" class="showcase-btn">📄 API Docs</a>
+            <a href="#" onclick="openModal('videos/docu_compressed.mp4', 'DocuQuery — Demo'); return false;" class="showcase-btn highlight">▶ Demo</a>
+          </div>
+        </div>
+      </div>
 
     </div>
-  </section>
-
-  <!-- CONTACT -->
   <section id="contact" class="section contact">
     <div class="section-label">07 / Contact</div>
     <h2>Let's <span class="gold">Connect</span></h2>
