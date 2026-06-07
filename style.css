@@ -928,21 +928,30 @@ footer {
    ============================================ */
 #back-to-top {
   position: fixed;
-  bottom: 2rem; right: 2rem;
-  width: 40px; height: 40px;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: var(--gold);
-  color: var(--navy);
-  border: none;
-  font-size: 1.1rem;
+  background: rgba(0, 194, 255, 0.15);
+  border: 1px solid rgba(0, 194, 255, 0.4);
+  color: var(--gold);
+  font-size: 1rem;
   cursor: pointer;
   z-index: 50;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s, transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s, background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
 #back-to-top.visible { opacity: 1; pointer-events: all; }
-#back-to-top:hover { transform: translateY(-3px); }
+#back-to-top:hover {
+  transform: translateY(-3px);
+  background: rgba(0, 194, 255, 0.25);
+}
 
 /* ============================================
    NAV DOTS (hidden)
