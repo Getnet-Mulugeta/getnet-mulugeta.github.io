@@ -361,15 +361,17 @@ const glitchCharsLoader = '01ABCDEFabcdef#$%&@!?';
 let loaderDone = false;
 
 async function loaderGlitch() {
-  // Start with random chars immediately
-  loaderText.textContent = Array.from({length: name.length}, (_, i) => 
-    name[i] === ' ' ? ' ' : glitchCharsLoader[Math.floor(Math.random() * glitchCharsLoader.length)]
-  ).join('');
-  
-  setTimeout(() => loaderLine.classList.add('expand'), 100);
-  await new Promise(r => setTimeout(r, 300));
-  
-  // Glitch reveal name
+  loaderLine.classList.add('expand');
+
+  // Scramble phase
+  for (let s = 0; s < 8; s++) {
+    loaderText.textContent = Array.from({length: name.length}, (_, i) =>
+      name[i] === ' ' ? ' ' : glitchCharsLoader[Math.floor(Math.random() * glitchCharsLoader.length)]
+    ).join('');
+    await new Promise(r => setTimeout(r, 50));
+  }
+
+  // Reveal phase
   for (let i = 0; i <= name.length; i++) {
     let result = name.slice(0, i);
     for (let j = i; j < name.length; j++) {
@@ -378,8 +380,8 @@ async function loaderGlitch() {
     loaderText.textContent = result;
     await new Promise(r => setTimeout(r, 35));
   }
-  
-  await new Promise(r => setTimeout(r, 500));
+
+  await new Promise(r => setTimeout(r, 400));
   document.getElementById('loader').classList.add('hidden');
 }
 
