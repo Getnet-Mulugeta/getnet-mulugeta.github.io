@@ -362,15 +362,16 @@ let loaderDone = false;
 
 async function loaderGlitch() {
   loaderLine.classList.add('expand');
-  for (let i = 0; i <= name.length; i++) {
-    let result = name.slice(0, i);
-    for (let j = i; j < name.length; j++) {
-      result += name[j] === ' ' ? ' ' : glitchCharsLoader[Math.floor(Math.random() * glitchCharsLoader.length)];
-    }
-    loaderText.textContent = result;
-    await new Promise(r => setTimeout(r, 18));
+  // Rapid scramble 5 times
+  for (let s = 0; s < 5; s++) {
+    loaderText.textContent = Array.from({length: name.length}, (_, i) =>
+      name[i] === ' ' ? ' ' : glitchCharsLoader[Math.floor(Math.random() * glitchCharsLoader.length)]
+    ).join('');
+    await new Promise(r => setTimeout(r, 60));
   }
-  await new Promise(r => setTimeout(r, 200));
+  // Snap to final name
+  loaderText.textContent = name;
+  await new Promise(r => setTimeout(r, 300));
   document.getElementById('loader').classList.add('hidden');
 }
 
