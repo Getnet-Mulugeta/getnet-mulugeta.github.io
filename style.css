@@ -864,6 +864,17 @@ footer {
   min-height: 2rem;
   text-align: center;
 }
+.loader-glitch::before {
+  content: 'G3TN3T MUL0G3T4';
+  animation: loaderPre 0.3s steps(1) forwards;
+}
+@keyframes loaderPre {
+  0%   { content: '01010 1101001'; }
+  25%  { content: 'G3TN3T MUL0G3T4'; }
+  50%  { content: '#ETNET M@LUG&T!'; }
+  75%  { content: 'G3TN3T MUL0G3T4'; }
+  100% { content: ''; }
+}
 .loader-line {
   width: 0px;
   height: 1px;
