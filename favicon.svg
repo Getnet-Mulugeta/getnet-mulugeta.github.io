@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect width="100" height="100" fill="#0a0f1e"/>
-  <text x="50" y="68" font-family="Georgia, serif" font-size="42" font-weight="700" fill="#c9a84c" text-anchor="middle">MD</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#080b12"/>
+  <rect width="32" height="32" rx="6" fill="none" stroke="#00C2FF" stroke-width="1.5" opacity="0.4"/>
+  <text x="4" y="22" font-family="monospace" font-size="13" font-weight="700" fill="#00C2FF" letter-spacing="0">GM</text>
 </svg>
