@@ -363,15 +363,7 @@ let loaderDone = false;
 async function loaderGlitch() {
   loaderLine.classList.add('expand');
 
-  // Scramble phase
-  for (let s = 0; s < 8; s++) {
-    loaderText.textContent = Array.from({length: name.length}, (_, i) =>
-      name[i] === ' ' ? ' ' : glitchCharsLoader[Math.floor(Math.random() * glitchCharsLoader.length)]
-    ).join('');
-    await new Promise(r => setTimeout(r, 50));
-  }
-
-  // Reveal phase
+  // Reveal phase - straight into glitch reveal
   for (let i = 0; i <= name.length; i++) {
     let result = name.slice(0, i);
     for (let j = i; j < name.length; j++) {

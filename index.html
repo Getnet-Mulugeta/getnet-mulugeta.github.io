@@ -26,22 +26,6 @@
   <meta name="twitter:description" content="ML Engineer building intelligent systems and full stack AI products.">
   <meta name="description" content="ML Engineer specializing in LLM systems and full stack AI. Washington DC. AAiT M.S. Computer Science.">
   <link rel="stylesheet" href="style.css" />
-  <script>
-    // Start glitch immediately before page renders
-    window.addEventListener('DOMContentLoaded', () => {
-      const el = document.getElementById('loaderText');
-      const chars = '01ABCDEFabcdef#$%&@!?';
-      const name = 'GETNET MULUGETA';
-      let i = 0;
-      const interval = setInterval(() => {
-        el.textContent = Array.from({length: name.length}, (_, j) =>
-          name[j] === ' ' ? ' ' : chars[Math.floor(Math.random() * chars.length)]
-        ).join('');
-        i++;
-        if (i > 5) clearInterval(interval);
-      }, 40);
-    });
-  </script>
 </head>
 <body>
 
