@@ -368,9 +368,9 @@ async function loaderGlitch() {
       result += name[j] === ' ' ? ' ' : glitchCharsLoader[Math.floor(Math.random() * glitchCharsLoader.length)];
     }
     loaderText.textContent = result;
-    await new Promise(r => setTimeout(r, 28));
+    await new Promise(r => setTimeout(r, 18));
   }
-  await new Promise(r => setTimeout(r, 350));
+  await new Promise(r => setTimeout(r, 200));
   document.getElementById('loader').classList.add('hidden');
 }
 
