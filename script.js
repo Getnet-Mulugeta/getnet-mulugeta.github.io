@@ -362,18 +362,15 @@ let loaderDone = false;
 
 async function loaderGlitch() {
   loaderLine.classList.add('expand');
-
-  // Reveal phase - straight into glitch reveal
   for (let i = 0; i <= name.length; i++) {
     let result = name.slice(0, i);
     for (let j = i; j < name.length; j++) {
       result += name[j] === ' ' ? ' ' : glitchCharsLoader[Math.floor(Math.random() * glitchCharsLoader.length)];
     }
     loaderText.textContent = result;
-    await new Promise(r => setTimeout(r, 35));
+    await new Promise(r => setTimeout(r, 28));
   }
-
-  await new Promise(r => setTimeout(r, 400));
+  await new Promise(r => setTimeout(r, 350));
   document.getElementById('loader').classList.add('hidden');
 }
 
