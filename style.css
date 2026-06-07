@@ -861,19 +861,53 @@ footer {
   color: var(--gold);
   letter-spacing: 4px;
   text-transform: uppercase;
-  min-height: 2rem;
   text-align: center;
+  position: relative;
+  animation: glitchText 0.8s steps(1) forwards;
 }
+
+.loader-glitch::before,
+.loader-glitch::after {
+  content: 'GETNET MULUGETA';
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+}
+
 .loader-glitch::before {
-  content: 'G3TN3T MUL0G3T4';
-  animation: loaderPre 0.3s steps(1) forwards;
+  color: rgba(0, 194, 255, 0.6);
+  animation: glitchBefore 0.8s steps(1) infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
 }
-@keyframes loaderPre {
-  0%   { content: '01010 1101001'; }
-  25%  { content: 'G3TN3T MUL0G3T4'; }
-  50%  { content: '#ETNET M@LUG&T!'; }
-  75%  { content: 'G3TN3T MUL0G3T4'; }
-  100% { content: ''; }
+
+.loader-glitch::after {
+  color: rgba(93, 223, 255, 0.4);
+  animation: glitchAfter 0.8s steps(1) infinite;
+  clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBefore {
+  0%   { transform: translateX(-3px); }
+  20%  { transform: translateX(3px); }
+  40%  { transform: translateX(-2px); }
+  60%  { transform: translateX(2px); }
+  80%  { transform: translateX(-1px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes glitchAfter {
+  0%   { transform: translateX(3px); }
+  20%  { transform: translateX(-3px); }
+  40%  { transform: translateX(2px); }
+  60%  { transform: translateX(-2px); }
+  80%  { transform: translateX(1px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes glitchText {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  100% { opacity: 1; }
 }
 .loader-line {
   width: 0px;
