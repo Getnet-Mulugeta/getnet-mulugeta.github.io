@@ -361,9 +361,13 @@ const glitchCharsLoader = '01ABCDEFabcdef#$%&@!?';
 let loaderDone = false;
 
 async function loaderGlitch() {
-  // Expand line first
+  // Start with random chars immediately
+  loaderText.textContent = Array.from({length: name.length}, (_, i) => 
+    name[i] === ' ' ? ' ' : glitchCharsLoader[Math.floor(Math.random() * glitchCharsLoader.length)]
+  ).join('');
+  
   setTimeout(() => loaderLine.classList.add('expand'), 100);
-  await new Promise(r => setTimeout(r, 400));
+  await new Promise(r => setTimeout(r, 300));
   
   // Glitch reveal name
   for (let i = 0; i <= name.length; i++) {
