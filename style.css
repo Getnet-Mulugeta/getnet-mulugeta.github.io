@@ -529,70 +529,68 @@ nav {
 /* ============================================
    EXPERIENCE / TIMELINE
    ============================================ */
-.timeline {
-  position: relative;
-  padding-left: 2rem;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 1px;
-  background: var(--border);
-}
-
-.timeline-item {
-  position: relative;
-  padding-bottom: 3rem;
-  padding-left: 2rem;
-}
-
-.timeline-dot {
-  position: absolute;
-  left: -2.4rem;
-  top: 0.5rem;
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  background: var(--gold);
-  border: 2px solid var(--navy);
-  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.2);
-}
-
-.timeline-header {
+.experience-list {
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.8rem;
-  margin-bottom: 0.8rem;
+  flex-direction: column;
+  gap: 0;
 }
 
-.timeline-header h3 {
-  font-size: 1.1rem;
+.experience-item {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 3rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.experience-item:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.exp-company {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+  line-height: 1.1;
+}
+
+.exp-role {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--white);
+  margin-bottom: 0.4rem;
 }
 
-.timeline-company {
+.exp-date {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--gold);
+  font-size: 0.72rem;
+  color: var(--gold-dim);
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
+}
+
+.exp-location {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted);
   letter-spacing: 0.5px;
 }
 
-.timeline-date {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--muted);
-  margin-left: auto;
-}
-
-.timeline-content p {
+.experience-right p {
   color: var(--muted);
   font-size: 0.95rem;
   line-height: 1.8;
 }
 
+@media (max-width: 768px) {
+  .experience-item {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
 /* ============================================
    CONTACT
    ============================================ */
