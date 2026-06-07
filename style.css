@@ -1721,8 +1721,8 @@ footer {
 
 .edu-row {
   display: grid;
-  grid-template-columns: 200px 1px 1fr;
-  gap: 3rem;
+  grid-template-columns: 220px 1px 1fr;
+  gap: 2.5rem;
   padding: 2.5rem 0;
   border-bottom: 1px solid var(--border);
   align-items: start;
