@@ -152,7 +152,7 @@ const glitchLines = [
 ];
 let glitchIdx = 0;
 const twEl = document.getElementById('twText');
-const glitchChars = '!<>-_\\/[]{}=+*^?#$%@~|;:';
+const glitchChars = '01アイウエオ▓▒░█▄▀⟨⟩∇∆∑∏∂∈⊕⊗ΨΦΩλμπ';
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 async function glitchReveal(target) {
