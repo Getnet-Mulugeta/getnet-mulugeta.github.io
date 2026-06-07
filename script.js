@@ -11,10 +11,11 @@ resize();
 window.addEventListener('resize', resize);
 
 const mlTools = [
-  'PyTorch','TensorFlow','HuggingFace','LangChain','OpenAI',
-  'scikit-learn','BERT','GPT-4','Embeddings','pgvector',
-  'MLflow','FastAPI','Docker','Groq','RAG',
-  'Transformers','LoRA','RLHF','Diffusion','CUDA'
+  'Python','Apache Airflow','Apache Spark','Kafka','dbt',
+  'PostgreSQL','AWS S3','Docker','MLflow','FastAPI',
+  'Snowflake','Redis','Terraform','PyTorch','scikit-learn',
+  'HuggingFace','OpenAI API','LangChain','pgvector','RAG',
+  'AWS Glue','BigQuery','Redshift','Node.js','Elasticsearch'
 ];
 
 const NEURON_COUNT = 28;
