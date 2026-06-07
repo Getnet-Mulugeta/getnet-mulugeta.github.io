@@ -1031,73 +1031,68 @@ footer {
 }
 
 /* ============================================
-   SKILLS FILTER
+   SKILLS CLOUD
    ============================================ */
-.skills-filter {
+.skills-cloud {
   display: flex;
-  gap: 0.8rem;
-  margin-bottom: 2.5rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 3rem;
 }
 
-.filter-btn {
+.skill-domain-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.skill-domain-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.domain-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.domain-title {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 1.5px;
+  font-size: 0.72rem;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  padding: 0.5rem 1.2rem;
+  white-space: nowrap;
+}
+
+.domain-title.de { color: var(--gold); }
+.domain-title.ml { color: #64b4ff; }
+.domain-title.fs { color: #64dc96; }
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skill-tags span {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+  padding: 0.4rem 0.9rem;
+  border-radius: 50px;
+  background: var(--navy-card);
   border: 1px solid var(--border);
-  border-radius: 2px;
-  background: transparent;
   color: var(--muted);
-  cursor: pointer;
+  cursor: default;
   transition: all 0.2s;
 }
 
-.filter-btn:hover {
+.skill-tags span:hover {
   border-color: var(--gold);
   color: var(--gold);
+  background: rgba(0, 194, 255, 0.05);
 }
-
-.filter-btn.active {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: var(--navy);
-}
-
-.skill-card-header {
-  margin-bottom: 0.8rem;
-}
-
-.skill-domain-tag {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  padding: 0.2rem 0.6rem;
-  border-radius: 2px;
-}
-
-.skill-domain-tag.de {
-  background: rgba(201,168,76,0.1);
-  color: var(--gold);
-  border: 1px solid rgba(201,168,76,0.3);
-}
-
-.skill-domain-tag.ml {
-  background: rgba(100,180,255,0.08);
-  color: #64b4ff;
-  border: 1px solid rgba(100,180,255,0.25);
-}
-
-.skill-domain-tag.fs {
-  background: rgba(100,220,150,0.08);
-  color: #64dc96;
-  border: 1px solid rgba(100,220,150,0.25);
-}
-
-.skill-card.hidden {
-  display: none;
 }
 
 /* ============================================
