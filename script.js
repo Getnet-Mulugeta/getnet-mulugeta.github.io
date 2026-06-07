@@ -356,19 +356,34 @@ window.addEventListener('load', () => {
     document.getElementById('loader').classList.add('hidden');
   }, 1900);
 });
-
 // ============================================
-// Scroll Fade-in Animations
+// Sophisticated Scroll Animations
 // ============================================
-const fadeEls = document.querySelectorAll('.skill-card, .project-card, .timeline-item, .stat, .education-card, .publication-card');
-fadeEls.forEach(el => el.classList.add('fade-in'));
+const animateEls = document.querySelectorAll(
+  '.section-label, .section h2, .about-layout, .edu-row, .skill-domain-row, .showcase-item, .experience-item, .contact-grid, .about-stats-row'
+);
 
-const fadeObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
+animateEls.forEach((el) => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(40px)';
+  el.style.transition = 'opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1)';
+});
+
+const scrollObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      const el = entry.target;
+      const siblings = Array.from(el.parentElement.children).filter(c =>
+        c.style.opacity === '0'
+      );
+      const idx = siblings.indexOf(el);
+      setTimeout(() => {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      }, Math.max(0, idx) * 100);
+      scrollObserver.unobserve(el);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
 
-fadeEls.forEach(el => fadeObserver.observe(el));
+animateEls.forEach(el => scrollObserver.observe(el));
