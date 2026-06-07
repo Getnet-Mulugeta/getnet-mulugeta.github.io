@@ -854,60 +854,45 @@ footer {
   align-items: center;
   gap: 1.5rem;
 }
-.loader-glitch {
-  font-family: var(--font-mono);
-  font-size: clamp(1rem, 3vw, 1.4rem);
-  font-weight: 700;
+.loader-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 300;
   color: var(--gold);
-  letter-spacing: 4px;
-  text-transform: uppercase;
+  letter-spacing: 6px;
   text-align: center;
-  position: relative;
-  animation: glitchText 0.8s steps(1) forwards;
+  display: flex;
+  gap: 0;
 }
 
-.loader-glitch::before,
-.loader-glitch::after {
-  content: 'GETNET MULUGETA';
-  position: absolute;
-  left: 0; top: 0;
-  width: 100%;
+.loader-name span {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: letterFadeIn 0.4s ease forwards;
 }
 
-.loader-glitch::before {
-  color: rgba(0, 194, 255, 0.6);
-  animation: glitchBefore 0.8s steps(1) infinite;
-  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
-}
+.loader-name span:nth-child(1)  { animation-delay: 0.05s; }
+.loader-name span:nth-child(2)  { animation-delay: 0.1s; }
+.loader-name span:nth-child(3)  { animation-delay: 0.15s; }
+.loader-name span:nth-child(4)  { animation-delay: 0.2s; }
+.loader-name span:nth-child(5)  { animation-delay: 0.25s; }
+.loader-name span:nth-child(6)  { animation-delay: 0.3s; }
+.loader-name span:nth-child(7)  { animation-delay: 0.35s; }
+.loader-name span:nth-child(8)  { animation-delay: 0.4s; }
+.loader-name span:nth-child(9)  { animation-delay: 0.45s; }
+.loader-name span:nth-child(10) { animation-delay: 0.5s; }
+.loader-name span:nth-child(11) { animation-delay: 0.55s; }
+.loader-name span:nth-child(12) { animation-delay: 0.6s; }
+.loader-name span:nth-child(13) { animation-delay: 0.65s; }
+.loader-name span:nth-child(14) { animation-delay: 0.7s; }
+.loader-name span:nth-child(15) { animation-delay: 0.75s; }
+.loader-name span:nth-child(16) { animation-delay: 0.8s; }
+.loader-name span:nth-child(17) { animation-delay: 0.85s; }
+.loader-name span:nth-child(18) { animation-delay: 0.9s; }
 
-.loader-glitch::after {
-  color: rgba(93, 223, 255, 0.4);
-  animation: glitchAfter 0.8s steps(1) infinite;
-  clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
-}
-
-@keyframes glitchBefore {
-  0%   { transform: translateX(-3px); }
-  20%  { transform: translateX(3px); }
-  40%  { transform: translateX(-2px); }
-  60%  { transform: translateX(2px); }
-  80%  { transform: translateX(-1px); }
-  100% { transform: translateX(0); }
-}
-
-@keyframes glitchAfter {
-  0%   { transform: translateX(3px); }
-  20%  { transform: translateX(-3px); }
-  40%  { transform: translateX(2px); }
-  60%  { transform: translateX(-2px); }
-  80%  { transform: translateX(1px); }
-  100% { transform: translateX(0); }
-}
-
-@keyframes glitchText {
-  0%   { opacity: 0; }
-  10%  { opacity: 1; }
-  100% { opacity: 1; }
+@keyframes letterFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 .loader-line {
   width: 0px;
