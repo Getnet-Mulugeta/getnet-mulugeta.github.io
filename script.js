@@ -141,37 +141,63 @@ drawNeural();
 // ============================================
 // Typewriter
 // ============================================
-const twLines = [
-  '> training and fine-tuning large language models...',
-  '> building production RAG pipelines with LangChain...',
-  '> deploying ML models with FastAPI and Docker...',
-  '> engineering end-to-end LLM-powered applications...',
-  '> optimizing transformer architectures for inference...',
-  '> building intelligent systems that learn and adapt...',
-  '> turning research papers into production AI products...',
+const glitchLines = [
+  'building ETL pipelines at scale',
+  'deploying ML models to production',
+  'engineering real-time data systems',
+  'architecting cloud-native infrastructure',
+  'shipping full stack AI applications',
+  'transforming raw data into intelligence',
+  'automating workflows with Airflow and Docker',
 ];
-let twIdx = 0;
+let glitchIdx = 0;
 const twEl = document.getElementById('twText');
-
+const glitchChars = '!<>-_\\/[]{}=+*^?#$%@~|;:';
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-async function typeLoop() {
-  while (true) {
-    const line = twLines[twIdx % twLines.length];
-    for (let i = 0; i <= line.length; i++) {
-      twEl.textContent = line.slice(0, i);
-      await sleep(45 + Math.random() * 25);
+async function glitchReveal(target) {
+  const len = target.length;
+  for (let i = 0; i < 10; i++) {
+    let scrambled = '';
+    for (let j = 0; j < len; j++) {
+      scrambled += target[j] === ' ' ? ' ' : glitchChars[Math.floor(Math.random() * glitchChars.length)];
     }
-    await sleep(1800);
-    for (let i = line.length; i >= 0; i--) {
-      twEl.textContent = line.slice(0, i);
-      await sleep(18);
+    twEl.textContent = scrambled;
+    await sleep(40);
+  }
+  for (let i = 0; i <= len; i++) {
+    let result = target.slice(0, i);
+    for (let j = i; j < len; j++) {
+      result += target[j] === ' ' ? ' ' : glitchChars[Math.floor(Math.random() * glitchChars.length)];
     }
-    await sleep(300);
-    twIdx++;
+    twEl.textContent = result;
+    await sleep(30);
   }
 }
-typeLoop();
+
+async function glitchErase(target) {
+  const len = target.length;
+  for (let i = len; i >= 0; i--) {
+    let result = target.slice(0, i);
+    for (let j = i; j < Math.min(i + 4, len); j++) {
+      result += glitchChars[Math.floor(Math.random() * glitchChars.length)];
+    }
+    twEl.textContent = result;
+    await sleep(20);
+  }
+}
+
+async function glitchLoop() {
+  while (true) {
+    const line = glitchLines[glitchIdx % glitchLines.length];
+    await glitchReveal(line);
+    await sleep(2200);
+    await glitchErase(line);
+    await sleep(300);
+    glitchIdx++;
+  }
+}
+glitchLoop();
 
 // ============================================
 // Scroll-triggered fade-in
